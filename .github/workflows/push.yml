@@ -2,7 +2,7 @@ name: Push Flow
 on:
   push:
    branches:
-   - "feature/*"
+   - feature/*
 jobs:
   my-job:
     runs-on: ubuntu-latest

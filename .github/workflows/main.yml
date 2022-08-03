@@ -1,8 +1,8 @@
 name: Format check on Pull Request
 on: 
  pull_request:
-  types: [ opened, edited ]
-  branches: [ develop, master, main ]
+  types: [ "opened", "edited" ]
+  branches: [ "develop", "master", "main" ]
   paths:
       - "**.cs"
   

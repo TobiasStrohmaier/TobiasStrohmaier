@@ -1,0 +1,25 @@
+name: Format check on Pull Request
+on: 
+ pull_request:
+  types: [ opened, edited ]
+  branches: [ develop, master ]
+  paths:
+      - "**.cs"
+  
+jobs:
+  dotnet-format:
+    runs-on: windows-latest
+    steps:
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+    
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Install dotnet-format
+        run: dotnet tool install -g dotnet-format
+
+      - name: Run dotnet format
+        run: dotnet format 'src/.' --verify-no-changes

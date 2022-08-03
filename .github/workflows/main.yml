@@ -1,11 +1,7 @@
-name: Format check on Pull Request
-on: 
- pull_request:
-  types: [ "opened", "edited" ]
-  branches: [ "develop", "master", "main" ]
-  paths:
-      - "**.cs"
-  
+name: Pull Request Testflow
+on:
+  pull_request:
+    types: [ opened, edited, closed, reopened ]
 jobs:
   my-job:
     runs-on: ubuntu-latest

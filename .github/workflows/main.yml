@@ -6,9 +6,21 @@ on:
     - reopened
     branches:
     - develop
+    
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
+  dotnet-format:
+    runs-on: windows-latest
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+    
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Install dotnet-format
+        run: dotnet tool install -g dotnet-format
+
+      - name: Run dotnet format
+        run: dotnet format 'src/.' --verify-no-changes

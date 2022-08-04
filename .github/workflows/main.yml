@@ -2,10 +2,12 @@ name: Pull Request Testflow
 on:
   pull_request:
     types:
-    - opened
-    - reopened
+     - opened
+     - reopened
     branches:
-    - develop
+     - develop
+    paths:
+     - '**.cs'
     
 jobs:
   dotnet-format:

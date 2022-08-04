@@ -7,8 +7,6 @@ on:
     - closed
     - reopened
     branches:
-    - main
-    - develop
     - 'feature/**'
 jobs:
   my-job:

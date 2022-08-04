@@ -9,6 +9,7 @@ on:
     branches:
     - main
     - develop
+    - 'feature/**'
 jobs:
   my-job:
     runs-on: ubuntu-latest

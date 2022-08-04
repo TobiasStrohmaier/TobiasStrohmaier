@@ -1,7 +1,9 @@
 name: Format check on push
 on: 
  push:
-  branches: develop
+  branches:
+   - develop
+   - 'feature/**'
   paths:
       - "**.cs"
   
